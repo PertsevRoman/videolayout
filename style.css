@@ -5,21 +5,18 @@ body {
 
 #images-box {
 	/* The total width of the image-box, mainly for centering */
-    top: 30px;
 	width: 100%;
     height: 600px;
 	margin: 0px auto;
 	position: relative;
 	bottom: 0px;
     text-align: center;
-    overflow-y: auto
 }
 
 .image-lightbox img {
 	/* Inherit the width and height from the parent element */
 	width: inherit;
 	height: inherit;
-	z-index: 3000;
 }
 
 .holder {
@@ -45,46 +42,27 @@ body {
 	height: 100%;
 	position: absolute;
 	top: 0;
-	z-index: 4000;
 	background: rgba(0,0,0,0); /* Fixes an IE bug */
 	left: 0;
-}
-
-.image-lightbox .close {
-	position: absolute;
-	width: 20px; height: 20px;
-	right: 20px; top: 20px;
-}
-
-.image-lightbox .close a {
-	height: auto; width: auto;
-	padding: 5px 10px;
-	color: #fff;
-	text-decoration: none;
-	background: #22272c;
-	box-shadow: inset 0px 24px 20px -15px rgba(255, 255, 255, 0.1), inset 0px 0px 10px rgba(0,0,0,0.4), 0px 0px 30px rgba(255,255,255,0.4);
-	border-radius: 5px;
-	font-weight: bold;
-	float: right;
-}
-
-.image-lightbox .close a:hover {
-	box-shadow: inset 0px -24px 20px -15px rgba(255, 255, 255, 0.01), inset 0px 0px 10px rgba(0,0,0,0.4), 0px 0px 20px rgba(255,255,255,0.4);
 }
 
 div[id^=image]:target {
 	width: 800px;
 	height: 600px;
-	z-index: 5000;
-    position: fixed;
+    position: absolute;
     left: 250px;
-    transform: translate(0%, 5%)
 }
-div[id^=image]:target .close {
-	display: block;
-}
-
 
 div[id^=image]:target .expand {
 	display: block;
+}
+
+.ingene {
+    height: 600px;
+    overflow-y: auto;
+    overflow: -moz-scrollbars-none;
+}
+
+.ingene::-webkit-scrollbar {
+    width: 0;
 }
